@@ -63,6 +63,7 @@ function initMap() {
         },
         mapTypeId: "roadmap",
         fullscreenControl: false, // Disable full-screen control
+        gestureHandling: "greedy" // Enable one-finger panning
     });
 
     cities.forEach((city) => {
