@@ -81,7 +81,7 @@ async function initMap() {
         const priceTag = document.createElement("div");
 
         priceTag.className = "price-tag";
-        priceTag.textContent = "1030"
+        priceTag.textContent = "10 مليون"
         
         const marker = new AdvancedMarkerElement ({
             map,
