@@ -36,10 +36,12 @@ let infoCard = document.querySelector('.info-card');
 let infoCardP = infoCard.querySelector('p');
 let infoCardH3 = infoCard.querySelector('h3'); 
 let infoCardCloseBtn = infoCard.querySelector('#close-btn'); 
+let mapOptions = document.querySelector('.map-options'); 
 
 
 infoCardCloseBtn.addEventListener('click', () => {
     infoCard.style.display = 'none';
+    mapOptions.style.display ='flex';
 })
 
 async function initMap() {
@@ -49,14 +51,15 @@ async function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         mapId: "6a7f4f4e7a7f5b47",
         center: { lat: 23.885942, lng: 45.079163 }, // Coordinates for Saudi Arabia
-        zoom: 6, // Adjust the zoom level as needed
-        mapTypeControl: true,
+        zoom: 6, 
+        zoomControl: false, 
+        // mapTypeControl: true,
         mapTypeControlOptions: {
             mapTypeIds: ['roadmap', 'terrain', 'satellite']
         },
-        mapTypeId: "roadmap",
-        fullscreenControl: false, // Disable full-screen control
-        gestureHandling: "greedy" // Enable one-finger panning, 
+        mapTypeId: "terrain",
+        fullscreenControl: false, 
+        gestureHandling: "greedy"  
     });
 
 
@@ -94,7 +97,7 @@ async function initMap() {
             infoCard.style.display = 'block'; 
             infoCardH3.textContent = city[0]; 
 
-
+            mapOptions.style.display = 'none'; 
             
         });
 
@@ -105,6 +108,15 @@ async function initMap() {
 
     document.querySelector("#btn_satellite").addEventListener('click', function() {
         map.setMapTypeId('satellite')
+    })
+
+
+    document.querySelector("#btn_roadmap").addEventListener('click', function() {
+        map.setMapTypeId('roadmap')
+    })
+
+    document.querySelector("#btn_terrain").addEventListener('click', function() {
+        map.setMapTypeId('terrain')
     })
 
 
