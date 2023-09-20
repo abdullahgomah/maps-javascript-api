@@ -69,3 +69,14 @@ body {
     background: #00796B; 
     color: white; 
 }
+
+
+/*  */
+
+.price-tag {
+    padding: .2rem .6rem; 
+    background: #00796B; 
+    color: #f9f9f9; 
+    font-size: .8rem;
+    border-radius: 1rem;
+}

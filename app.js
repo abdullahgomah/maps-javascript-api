@@ -29,6 +29,9 @@ const cities = [
     ["Hafr Al-Batin", 28.4434, 46.6750]
 ];
 
+
+
+
 let infoCard = document.querySelector('.info-card'); 
 let infoCardP = infoCard.querySelector('p');
 let infoCardH3 = infoCard.querySelector('h3'); 
@@ -39,8 +42,9 @@ infoCardCloseBtn.addEventListener('click', () => {
     infoCard.style.display = 'none';
 })
 
-function initMap() {
+async function initMap() {
 
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
     const map = new google.maps.Map(document.getElementById("map"), {
         mapId: "6a7f4f4e7a7f5b47",
@@ -55,11 +59,31 @@ function initMap() {
         gestureHandling: "greedy" // Enable one-finger panning, 
     });
 
+
+    const priceTag = document.createElement("div");
+
+    priceTag.className = "price-tag";
+    priceTag.textContent = "1030"
+  
+    // const AdvMarker = new AdvancedMarkerElement ({
+    //     position: { lat: 24.7136, lng: 46.6753 }, 
+    //     map: map, 
+    //     content: priceTag 
+    // })
+
+
+
     cities.forEach((city) => {
-        const marker = new google.maps.Marker({
-            position: { lat: city[1], lng: city[2] },
+
+        const priceTag = document.createElement("div");
+
+        priceTag.className = "price-tag";
+        priceTag.textContent = "1030"
+        
+        const marker = new AdvancedMarkerElement ({
             map,
-            title: city[0],
+            position: { lat: city[1], lng: city[2] },
+            content: priceTag, 
             // icon: './house(1).png',
         });
 
