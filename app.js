@@ -29,6 +29,16 @@ const cities = [
     ["Hafr Al-Batin", 28.4434, 46.6750]
 ];
 
+let infoCard = document.querySelector('.info-card'); 
+let infoCardP = infoCard.querySelector('p');
+let infoCardH3 = infoCard.querySelector('h3'); 
+let infoCardCloseBtn = infoCard.querySelector('#close-btn'); 
+
+
+infoCardCloseBtn.addEventListener('click', () => {
+    infoCard.style.display = 'none';
+})
+
 function initMap() {
 
 
@@ -56,7 +66,12 @@ function initMap() {
 
     
         marker.addListener('click', function () {
-            alert(city[0]) 
+            // alert(city[0]) 
+            infoCard.style.display = 'block'; 
+            infoCardH3.textContent = city[0]; 
+
+
+            
         });
 
 

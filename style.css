@@ -1,3 +1,9 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0; 
+    margin:0;
+    box-sizing: border-box;
+}
 #map {
     height: 100%;
 }
@@ -10,8 +16,56 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
+}
+
+.info-card { 
+    width: 300px; 
+    max-width:  100% !important;
+    height: fit-content;
+    position: absolute;
+    background: #f9f9f9; 
+    bottom: 2rem; 
+    left: 50%; 
+    transform: translateX(-50%);
+    display: none;
+}
+
+.info-card .content {
+    width: 100%; 
+    height: 100%; 
+    padding: 1rem;
+    position: relative;
+}
+
+#close-btn { 
+    position: absolute;
+    top: 1rem; 
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.info-card p {
+    font-weight: 300;
+    margin: 1rem 0 ;
 }
 
 #map {
     height: 100vh;
+}
+
+.btn {
+    display: inline-block;
+    padding: .5rem 1rem; 
+    width: 100px;
+    text-align: center;
+    margin-top: 1rem ;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.btn-solid-success {
+    background: #00796B; 
+    color: white; 
 }
