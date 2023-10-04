@@ -94,7 +94,7 @@ async function initMap() {
     
         marker.addListener('click', function () {
             // alert(city[0]) 
-            infoCard.style.display = 'block'; 
+            infoCard.style.display = 'flex'; 
             infoCardH3.textContent = city[0]; 
 
             mapOptions.style.display = 'none'; 
